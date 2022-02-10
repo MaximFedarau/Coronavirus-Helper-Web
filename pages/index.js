@@ -25,6 +25,10 @@ export default function Home() {
     }
 
     console.log(language)
+
+    if (language === undefined) {
+      console.log(1)
+    }
   }
 
   React.useLayoutEffect(() => {
