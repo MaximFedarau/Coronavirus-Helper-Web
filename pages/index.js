@@ -8,6 +8,8 @@ import styles from '../styles/Home.module.css'
 
 import React from 'react'
 
+import TestComponent from '../components-ru/TestComponent'
+
 
 
 export default function Home() {
@@ -47,6 +49,8 @@ export default function Home() {
       </Link>
       <h1>{language}</h1>
       <Button onClick={changeLanguage}>Change language</Button>
+      <br/>
+      <TestComponent/>
     </div>
   )
 }
