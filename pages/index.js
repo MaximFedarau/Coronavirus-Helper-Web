@@ -1,9 +1,52 @@
 import { Link } from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react'
+
 import Head from 'next/head'
 import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import store from "../store/store.js"
+import {connect} from "react-redux"
+import {Provider} from "react-redux"
+
+import React from 'react'
+
+function changeLanguage() {
+  return {
+    type: "CHANGE_LANGUAGE"
+  }
+}
+
+function setLanguage(language) {
+  return {
+    type: 'SET_LANGUAGE',
+    language
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    language: state.RuEnLanguageReducer.language
+  }
+}
+
+const mapDispatchToProps = {
+  changeLanguage,
+  setLanguage
+}
+
+function Home() {
+
+  function changeLanguageClick() {
+    store.dispatch(changeLanguage())
+    localStorage.setItem("language",store.getState().RuEnLanguageReducer.language)
+  }
+
+  React.useEffect(() => {
+    store.dispatch(setLanguage(localStorage.getItem("language")))
+  },[])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,11 +56,23 @@ export default function Home() {
       </Head>
 
       <Link href="./product/bots">
-        <a>Go to bots page</a>
+        {(store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to bots page</a> : <a>Перейти к ботам</a>}
       </Link><br/>
       <Link href="./product/messenger">
-        <a>Go to messenger page</a>
+        {(store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to messenger page</a> : <a>Перейти к messenger</a>}
       </Link>
+      <h1>{store.getState().RuEnLanguageReducer.language}</h1>
+      <Button onClick={changeLanguageClick}>Change language</Button>
     </div>
+  )
+}
+
+const ConnectedHome = connect(mapStateToProps,mapDispatchToProps)(Home)
+
+export default function ReadyHome() {
+  return (
+    <Provider store={store}>
+      <ConnectedHome/>
+    </Provider>
   )
 }
