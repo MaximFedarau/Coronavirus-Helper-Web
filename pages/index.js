@@ -41,6 +41,7 @@ function Home() {
   function changeLanguageClick() {
     store.dispatch(changeLanguage())
     localStorage.setItem("language",store.getState().RuEnLanguageReducer.language)
+    console.log(localStorage.getItem("language"),store.getState().RuEnLanguageReducer.language)
   }
 
   React.useEffect(() => {
