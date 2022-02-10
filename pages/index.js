@@ -37,15 +37,15 @@ export default function Home() {
   }
 
   React.useLayoutEffect(() => {
-    if (localStorage.getItem('language')) {
-      setLanguage((localStorage.getItem('language')))
+    if (sessionStorage.getItem('language')) {
+      setLanguage((sessionStorage.getItem('language')))
     } else {
-      localStorage.setItem('language', language)
+      sessionStorage.setItem('language', language)
     }
   }, [])
 
   React.useEffect(() => {
-    localStorage.setItem('language', language)
+    sessionStorage.setItem('language', language)
   }, [language])
 
   return (
