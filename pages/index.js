@@ -16,7 +16,7 @@ export default function Home() {
 
   const [language,setLanguage] = React.useState('en')
 
-  console.log(language)
+  console.log(0,language,localStorage.getItem('language'))
 
   function changeLanguage() {
     if (language === "en") {
@@ -31,7 +31,7 @@ export default function Home() {
     if (language === undefined) {
       console.log(1)
     } else {
-      console.log(2)
+      console.log(2,language)
     }
   }
 
