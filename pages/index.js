@@ -16,6 +16,8 @@ export default function Home() {
 
   const [language,setLanguage] = React.useState('en')
 
+  console.log(language)
+
   function changeLanguage() {
     if (language === "en") {
       setLanguage("ru")
@@ -28,6 +30,8 @@ export default function Home() {
 
     if (language === undefined) {
       console.log(1)
+    } else {
+      console.log(2)
     }
   }
 
