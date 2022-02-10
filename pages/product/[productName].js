@@ -2,7 +2,7 @@ import {getProducts} from "../../lib/getProducts"
 
 import BotsComponent from "../../components/Bots"
 import MessengerComponent from "../../components/Messenger"
-
+import NotFound from "../404"
 
 export async function getStaticPaths() {
     const data = getProducts()
@@ -34,12 +34,13 @@ export default function ProductComponent({data}) {
                 return <BotsComponent/>
             case "messenger":
                 return <MessengerComponent/>
+            default:
+                return <NotFound/>
         }
     }
 
     return (
         <div>
-            <h1>{data}</h1>
             {dataRendering()}
         </div>
     )
