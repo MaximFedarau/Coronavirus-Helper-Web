@@ -23,6 +23,8 @@ export default function Home() {
     else if (language === "ru") {
       setLanguage("en")
     }
+
+    console.log(language)
   }
 
   React.useLayoutEffect(() => {
