@@ -6,46 +6,29 @@ import Image from 'next/image'
 
 import styles from '../styles/Home.module.css'
 
-import store from "../store/store.js"
-import {connect} from "react-redux"
-import {Provider} from "react-redux"
-
 import React from 'react'
 
-function changeLanguage() {
-  return {
-    type: "CHANGE_LANGUAGE"
-  }
-}
 
-function setLanguage(language) {
-  return {
-    type: 'SET_LANGUAGE',
-    language
-  }
-}
 
-function mapStateToProps(state) {
-  return {
-    language: state.RuEnLanguageReducer.language
-  }
-}
+export default function Home() {
 
-const mapDispatchToProps = {
-  changeLanguage,
-  setLanguage
-}
+  const [language,setLanguage] = React.useState('en')
 
-function Home() {
-
-  function changeLanguageClick() {
-    store.dispatch(changeLanguage())
-    localStorage.setItem("language",store.getState().RuEnLanguageReducer.language)
-    console.log(localStorage.getItem("language"),store)
+  function changeLanguage() {
+    if (language === "en") {
+      setLanguage("ru")
+      localStorage.setItem('language', "ru")
+    }
+    else if (language === "ru") {
+      setLanguage("en")
+      localStorage.setItem('language', "en")
+    }
+    console.log(localStorage.getItem('language'))
   }
 
   React.useEffect(() => {
-    store.dispatch(setLanguage(localStorage.getItem("language")))
+    setLanguage(localStorage.getItem("language"))
+    console.log(localStorage.getItem('language'))
   },[])
 
   return (
@@ -57,23 +40,14 @@ function Home() {
       </Head>
 
       <Link href="./product/bots">
-        {(store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to bots page</a> : <a>Перейти к ботам</a>}
+        <a>Go to bots page</a>
       </Link><br/>
       <Link href="./product/messenger">
-        {(store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to messenger page</a> : <a>Перейти к messenger</a>}
+        <a>Go to messenger page</a>
       </Link>
-      <h1>{store.getState().RuEnLanguageReducer.language}</h1>
-      <Button onClick={changeLanguageClick}>Change language</Button>
+      <h1>{language}</h1>
+      <Button onClick={changeLanguage}>Change language</Button>
     </div>
   )
 }
 
-const ConnectedHome = connect(mapStateToProps,mapDispatchToProps)(Home)
-
-export default function ReadyHome() {
-  return (
-    <Provider store={store}>
-      <ConnectedHome/>
-    </Provider>
-  )
-}
