@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect } from 'react'
 
-export default function button() {
+export default function ButtonPage() {
   const [count, setCount] = useState(0)
 
   useLayoutEffect(() => {
