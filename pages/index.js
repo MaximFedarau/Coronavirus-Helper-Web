@@ -19,19 +19,19 @@ export default function Home() {
   function changeLanguage() {
     if (language === "en") {
       setLanguage("ru")
-      //localStorage.setItem('language', "ru")
+      localStorage.setItem('language', "ru")
     }
     else if (language === "ru") {
       setLanguage("en")
-      //localStorage.setItem('language', "en")
+      localStorage.setItem('language', "en")
     }
-    //console.log(localStorage.getItem('language'))
+    console.log(localStorage.getItem('language'))
   }
 
-  /*React.useEffect(() => {
+  React.useEffect(() => {
     setLanguage(localStorage.getItem("language"))
     console.log(localStorage.getItem('language'))
-  },[])*/
+  },[])
 
   return (
     <div className={styles.container}>
