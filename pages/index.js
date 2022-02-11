@@ -78,6 +78,10 @@ function Home() {
   }, [store.getState().RuEnLanguageReducer.language])
 
 
+  function checkLocalStorage() {
+    if (typeof window !== 'undefined') console.log("localStorage is available")
+  }
+
   return (
       <div className={styles.container}>
       <Head>
@@ -97,6 +101,7 @@ function Home() {
       <Button onClick={() => {
         store.dispatch(changeReduxLanguage())
       }}>Click</Button>
+      <Button onClick={checkLocalStorage}>Check local storage</Button>
     </div>
   )
 }
