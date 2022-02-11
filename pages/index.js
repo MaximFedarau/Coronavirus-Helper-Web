@@ -87,10 +87,10 @@ function Home() {
       </Head>
 
       <Link href="./product/bots">
-        <a>Go to bots page</a>
+        {((store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to bots page</a> : <a>Перейти к странице с ботами</a>)}
       </Link><br/>
       <Link href="./product/messenger">
-        <a>Go to messenger page</a>
+      {((store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to messenger page</a> : <a>Перейти к странице с messenger</a>)}
       </Link>
       <br/>
       <h1>{store.getState().RuEnLanguageReducer.language}</h1>
