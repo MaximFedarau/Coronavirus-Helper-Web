@@ -63,18 +63,22 @@ function Home() {
   }*/
 
   React.useLayoutEffect(() => {
-    if (sessionStorage.getItem('language')) {
-      //setLanguage((sessionStorage.getItem('language')))
-      store.dispatch(setReduxLanguage(sessionStorage.getItem('language')))
-      console.log(1)
-    } else {
-      //sessionStorage.setItem('language', language)
-      sessionStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
+    if (typeof window !== 'undefined') {
+      if (localStorage.getItem('language')) {
+        //setLanguage((sessionStorage.getItem('language')))
+        store.dispatch(setReduxLanguage(localStorage.getItem('language')))
+        console.log(1)
+      } else {
+        //sessionStorage.setItem('language', language)
+        localStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
+      }
     }
   }, [])
 
   React.useEffect(() => {
-    sessionStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
+    }
   }, [store.getState().RuEnLanguageReducer.language])
 
 
