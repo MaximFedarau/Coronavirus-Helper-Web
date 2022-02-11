@@ -20,6 +20,13 @@ function changeReduxLanguage() {
   }
 }
 
+function setReduxLanguage(language) {
+  return {
+    type: "SET_LANGUAGE", 
+    language
+  }
+}
+
 function mapStateToProps(state) {
   return {
     language: state.RuEnLanguageReducer.language
@@ -27,12 +34,13 @@ function mapStateToProps(state) {
 }
 
 const mapDispatchToProps = {
-  changeReduxLanguage
+  changeReduxLanguage,
+  setReduxLanguage
 }
 
 function Home() {
 
-  const [language,setLanguage] = React.useState('en')
+  /*const [language,setLanguage] = React.useState('en')
 
   console.log(0,language)
 
@@ -52,19 +60,22 @@ function Home() {
       console.log(2,language)
       console.log(localStorage.getItem('language'))
     }
-  }
+  }*/
 
   React.useLayoutEffect(() => {
     if (sessionStorage.getItem('language')) {
-      setLanguage((sessionStorage.getItem('language')))
+      //setLanguage((sessionStorage.getItem('language')))
+      store.dispatch(setReduxLanguage(sessionStorage.getItem('language')))
+      console.log(1)
     } else {
-      sessionStorage.setItem('language', language)
+      //sessionStorage.setItem('language', language)
+      sessionStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
     }
   }, [])
 
   React.useEffect(() => {
-    sessionStorage.setItem('language', language)
-  }, [language])
+    sessionStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
+  }, [store.getState().RuEnLanguageReducer.language])
 
 
   return (
@@ -81,8 +92,6 @@ function Home() {
       <Link href="./product/messenger">
         <a>Go to messenger page</a>
       </Link>
-      <h1>{language}</h1>
-      <Button onClick={changeLanguage}>Change language</Button>
       <br/>
       <h1>{store.getState().RuEnLanguageReducer.language}</h1>
       <Button onClick={() => {
