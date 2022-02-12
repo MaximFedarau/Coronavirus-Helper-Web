@@ -83,7 +83,7 @@ function Home() {
 
   React.useEffect(() => {
     //document.location.reload()
-    console.log(1)
+    console.log(2)
   },[]) 
 
 
