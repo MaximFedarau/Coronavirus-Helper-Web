@@ -82,7 +82,8 @@ function Home() {
   }, [store.getState().RuEnLanguageReducer.language])
 
   React.useEffect(() => {
-    document.location.reload()
+    //document.location.reload()
+    console.log(1)
   },[]) 
 
 
