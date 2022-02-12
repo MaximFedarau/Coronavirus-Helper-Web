@@ -58,8 +58,8 @@ function MessengerComponent() {
         store.dispatch(changeReduxLanguage())
         }}>Click</Button>
         <Button>
-            <Link href="/">
-                <a>Go back to home</a>
+            <Link href="../">
+                <a>Go back </a>
             </Link>
         </Button>
         </div>

@@ -58,8 +58,8 @@ function DiscordBotComponent() {
         store.dispatch(changeReduxLanguage())
         }}>Click</Button>
         <Button><br/>
-            <Link href="/">
-                <a>Go back to home</a>
+            <Link href="./">
+                <a>Go back</a>
             </Link>
         </Button>   
         </div>
