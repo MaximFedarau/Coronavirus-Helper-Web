@@ -6,6 +6,7 @@ import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
 import { Button } from '@chakra-ui/react'
+import ThemeToggleButton from "../devComponents/theme-toggle-button"
 
 function changeReduxLanguage() {
     return {
@@ -54,6 +55,7 @@ function BotsComponent() {
 
     return (
         <div>
+            <ThemeToggleButton/>
             <Link href="./bots/telegram-bot"> 
                 {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к телеграм боту</a> : <a>Go to telegram bot</a>}
             </Link><br/>

@@ -5,6 +5,7 @@ import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
 import { Button, Link } from '@chakra-ui/react'
+import ThemeToggleButton from "../devComponents/theme-toggle-button";
 
 function changeReduxLanguage() {
     return {
@@ -53,6 +54,7 @@ function MessengerComponent() {
 
     return (
         <div>
+          <ThemeToggleButton/>
             {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Про messenger</h1> : <h1>About messenger</h1> }
             <Button onClick={() => {
         store.dispatch(changeReduxLanguage())
