@@ -1,4 +1,7 @@
+import ReadyDiscordBotComponent from "../../../components/bot-types/Discord-Bot"
+import ReadyTelegramBotComponent from "../../../components/bot-types/Telegram-Bot"
 import {getBotTypes} from "../../../lib/getBotTypes"
+import NotFound from "../../404"
 
 export function getStaticPaths() {
 
@@ -22,7 +25,21 @@ export function getStaticProps(context) {
 }
 
 export default function BotComponent({data}) {
+
+    function dataRendering() {
+        switch(data) {
+            case "telegram-bot":
+                return <ReadyTelegramBotComponent/>
+            case "discord-bot":
+                return <ReadyDiscordBotComponent/>
+            default:
+                return <NotFound/>
+        }
+    }
+
     return (
-        <h1>{data}</h1>
+        <div>
+            {dataRendering()}
+        </div>
     )
 }
