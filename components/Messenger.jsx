@@ -6,6 +6,7 @@ import {connect} from "react-redux"
 
 import { Button, Link } from '@chakra-ui/react'
 import NavBar from "../devComponents/navbar";
+import Footer from "../devComponents/footer";
 
 function changeReduxLanguage() {
     return {
@@ -56,6 +57,7 @@ function MessengerComponent() {
         <div>
           <NavBar link="../"/>
             {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Про messenger</h1> : <h1>About messenger</h1> }
+          <Footer/>
         </div>
     )
 }

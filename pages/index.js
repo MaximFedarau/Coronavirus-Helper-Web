@@ -9,6 +9,7 @@ import { Provider } from 'react-redux'
 import { connect } from "react-redux"
 
 import NavBar from '../devComponents/navbar'
+import Footer from '../devComponents/footer'
 
 function changeReduxLanguage() {
   return {
@@ -92,6 +93,7 @@ function Home() {
       {((store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к странице с messenger</a> : <a>Go to messenger page</a>)}
       </Link>
       <br/>
+      <Footer/>
     </div>
   )
 }

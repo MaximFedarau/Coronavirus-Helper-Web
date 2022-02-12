@@ -6,6 +6,7 @@ import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
 import NavBar from "../devComponents/navbar"
+import Footer from "../devComponents/footer"
 
 function changeReduxLanguage() {
     return {
@@ -61,6 +62,7 @@ function BotsComponent() {
             <Link href="./bots/discord-bot"> 
                 {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к дискорд боту</a> : <a>Go to discord bot</a>}
             </Link><br/>
+            <Footer/>
         </div>
     )
 }

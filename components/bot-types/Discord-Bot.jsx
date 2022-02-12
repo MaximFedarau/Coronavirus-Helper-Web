@@ -7,6 +7,7 @@ import {connect} from "react-redux"
 import { Button, Link } from '@chakra-ui/react'
 import ThemeToggleButton from "../../devComponents/theme-toggle-button";
 import NavBar from "../../devComponents/navbar";
+import Footer from "../../devComponents/footer";
 
 function changeReduxLanguage() {
     return {
@@ -56,7 +57,8 @@ function DiscordBotComponent() {
     return (
         <div> 
           <NavBar link="./"/>
-            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Дискорд бот</h1> : <h1>Discord Bot</h1>}   
+            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Дискорд бот</h1> : <h1>Discord Bot</h1>}
+          <Footer/>   
         </div>
     )
 }
