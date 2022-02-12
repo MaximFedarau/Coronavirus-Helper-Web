@@ -5,7 +5,7 @@ import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
 import { Button, Link } from '@chakra-ui/react'
-import ThemeToggleButton from "../devComponents/theme-toggle-button";
+import NavBar from "../devComponents/navbar";
 
 function changeReduxLanguage() {
     return {
@@ -33,7 +33,7 @@ const mapDispatchToProps = {
 
 function MessengerComponent() {
 
-    React.useLayoutEffect(() => {//add else statement
+    /*React.useLayoutEffect(() => {//add else statement
         if (typeof window !== 'undefined') {
           if (localStorage.getItem('language')) {
             //setLanguage((sessionStorage.getItem('language')))
@@ -50,20 +50,12 @@ function MessengerComponent() {
         if (typeof window !== 'undefined') {
           localStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
         }
-      }, [store.getState().RuEnLanguageReducer.language])
+      }, [store.getState().RuEnLanguageReducer.language])*/
 
     return (
         <div>
-          <ThemeToggleButton/>
+          <NavBar link="../"/>
             {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Про messenger</h1> : <h1>About messenger</h1> }
-            <Button onClick={() => {
-        store.dispatch(changeReduxLanguage())
-        }}>Click</Button>
-        <Button>
-            <Link href="../">
-                <a>Go back </a>
-            </Link>
-        </Button>
         </div>
     )
 }

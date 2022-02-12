@@ -5,8 +5,7 @@ import store from "../store/store"
 import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
-import { Button } from '@chakra-ui/react'
-import ThemeToggleButton from "../devComponents/theme-toggle-button"
+import NavBar from "../devComponents/navbar"
 
 function changeReduxLanguage() {
     return {
@@ -34,7 +33,7 @@ const mapDispatchToProps = {
 
 function BotsComponent() {
 
-    React.useLayoutEffect(() => {//add else statement
+    /*React.useLayoutEffect(() => {//add else statement
         if (typeof window !== 'undefined') {
           if (localStorage.getItem('language')) {
             //setLanguage((sessionStorage.getItem('language')))
@@ -51,25 +50,17 @@ function BotsComponent() {
         if (typeof window !== 'undefined') {
           localStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
         }
-    }, [store.getState().RuEnLanguageReducer.language])
+    }, [store.getState().RuEnLanguageReducer.language])*/
 
     return (
         <div>
-            <ThemeToggleButton/>
+            <NavBar link="../"/>
             <Link href="./bots/telegram-bot"> 
                 {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к телеграм боту</a> : <a>Go to telegram bot</a>}
             </Link><br/>
             <Link href="./bots/discord-bot"> 
                 {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к дискорд боту</a> : <a>Go to discord bot</a>}
             </Link><br/>
-            <Button onClick={() => {
-        store.dispatch(changeReduxLanguage())
-        }}>Click</Button>
-        <Button><br/>
-            <Link href="../">
-                <a>Go back </a>
-            </Link>
-        </Button>
         </div>
     )
 }

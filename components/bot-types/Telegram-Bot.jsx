@@ -6,6 +6,7 @@ import {connect} from "react-redux"
 
 import { Button, Link } from '@chakra-ui/react'
 import ThemeToggleButton from "../../devComponents/theme-toggle-button";
+import NavBar from "../../devComponents/navbar";
 
 function changeReduxLanguage() {
     return {
@@ -33,7 +34,7 @@ const mapDispatchToProps = {
 
 function TelegramBotComponent() {
 
-    React.useLayoutEffect(() => {//add else statement
+    /*React.useLayoutEffect(() => {//add else statement
         if (typeof window !== 'undefined') {
           if (localStorage.getItem('language')) {
             //setLanguage((sessionStorage.getItem('language')))
@@ -50,20 +51,12 @@ function TelegramBotComponent() {
         if (typeof window !== 'undefined') {
           localStorage.setItem('language', store.getState().RuEnLanguageReducer.language)
         }
-    }, [store.getState().RuEnLanguageReducer.language])
+    }, [store.getState().RuEnLanguageReducer.language])*/
 
     return (
         <div> 
-          <ThemeToggleButton/>
+          <NavBar link="./"/>
             {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Телеграм Бот</h1> : <h1>Telegram Bot</h1>}
-            <Button onClick={() => {
-        store.dispatch(changeReduxLanguage())
-        }}>Click</Button>
-        <Button><br/>
-            <Link href="./">
-                <a>Go back</a>
-            </Link>
-        </Button>
         </div>
     )
 }

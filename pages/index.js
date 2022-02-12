@@ -1,4 +1,4 @@
-import { Link } from '@chakra-ui/react'
+import { Divider, Link } from '@chakra-ui/react'
 
 import Head from 'next/head'
 
