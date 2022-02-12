@@ -62,7 +62,7 @@ function Home() {
     }
   }*/
 
-  React.useLayoutEffect(() => {
+  React.useLayoutEffect(() => {//add else statement
     if (typeof window !== 'undefined') {
       if (localStorage.getItem('language')) {
         //setLanguage((sessionStorage.getItem('language')))
@@ -95,10 +95,10 @@ function Home() {
       </Head>
 
       <Link href="./product/bots">
-        {((store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to bots page</a> : <a>Перейти к странице с ботами</a>)}
+        {((store.getState().RuEnLanguageReducer.language === "ru") ?  <a>Перейти к странице с ботами</a> : <a>Go to bots page</a>)}
       </Link><br/>
       <Link href="./product/messenger">
-      {((store.getState().RuEnLanguageReducer.language === "en") ? <a>Go to messenger page</a> : <a>Перейти к странице с messenger</a>)}
+      {((store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к странице с messenger</a> : <a>Go to messenger page</a>)}
       </Link>
       <br/>
       <h1>{store.getState().RuEnLanguageReducer.language}</h1>
