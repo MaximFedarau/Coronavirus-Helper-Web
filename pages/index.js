@@ -81,6 +81,10 @@ function Home() {
     }
   }, [store.getState().RuEnLanguageReducer.language])
 
+  React.useEffect(() => {
+    document.location.reload()
+  },[]) 
+
 
   function checkLocalStorage() {
     if (typeof window !== 'undefined') console.log("localStorage is available")
