@@ -4,7 +4,7 @@ import store from "../store/store"
 import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
-import { Button } from '@chakra-ui/react'
+import { Button, Link } from '@chakra-ui/react'
 
 function changeReduxLanguage() {
     return {
@@ -57,6 +57,11 @@ function MessengerComponent() {
             <Button onClick={() => {
         store.dispatch(changeReduxLanguage())
         }}>Click</Button>
+        <Button>
+            <Link href="/">
+                <a>Go back to home</a>
+            </Link>
+        </Button>
         </div>
     )
 }

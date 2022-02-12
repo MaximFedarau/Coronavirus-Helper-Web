@@ -1,6 +1,6 @@
 import {getProducts} from "../../lib/getProducts"
 
-import BotsComponent from "../../components/Bots"
+import ReadyBotsComponent from "../../components/Bots"
 import ReadyMessengerComponent from "../../components/Messenger"
 import NotFound from "../404"
 
@@ -31,7 +31,7 @@ export default function ProductComponent({data}) {
     function dataRendering() {
         switch(data) {
             case "bots":
-                return <BotsComponent/>
+                return <ReadyBotsComponent/>
             case "messenger":
                 return <ReadyMessengerComponent/>
             default:
