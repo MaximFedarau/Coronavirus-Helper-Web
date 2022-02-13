@@ -3,6 +3,7 @@ import {getProducts} from "../../lib/getProducts"
 import ReadyBotsComponent from "../../components/Bots"
 import ReadyMessengerComponent from "../../components/Messenger"
 import NotFound from "../404"
+import ReadyTelegramBotComponent from "../../components/bot-types/Telegram-Bot"
 
 export async function getStaticPaths() {
     const data = getProducts()
@@ -35,7 +36,7 @@ export default function ProductComponent({data}) {
             case "messenger":
                 return <ReadyMessengerComponent/>
             default:
-                return <NotFound/>
+                return <ReadyTelegramBotComponent/>
         }
     }
 
