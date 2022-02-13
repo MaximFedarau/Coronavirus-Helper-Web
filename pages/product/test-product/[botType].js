@@ -3,7 +3,7 @@ import ReadyTelegramBotComponent from "../../../components/bot-types/Telegram-Bo
 import {getBotTypes} from "../../../lib/getBotTypes"
 import NotFound from "../../404"
 
-export function getStaticPaths() {
+export async function getStaticPaths() {
 
     const data = getBotTypes()
     
@@ -18,7 +18,7 @@ export function getStaticPaths() {
 
 }
 
-export function getStaticProps(context) {
+export async function getStaticProps(context) {
     return {
         props: {data: context.params.botType}
     }

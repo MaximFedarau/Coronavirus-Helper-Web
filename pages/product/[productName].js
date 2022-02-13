@@ -34,7 +34,7 @@ export default function ProductComponent({data}) {
             case "bots":
                 return <ReadyBotsComponent/>
             case "messenger":
-                return <ReadyTelegramBotComponent/>//<ReadyMessengerComponent/>
+                return <ReadyMessengerComponent/>//<ReadyMessengerComponent/>
             default:
                 return <NotFound/>
     }}
