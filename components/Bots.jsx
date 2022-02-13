@@ -8,6 +8,8 @@ import {connect} from "react-redux"
 import NavBar from "../devComponents/navbar"
 import Footer from "../devComponents/footer"
 
+import NextLink from "next/link"
+
 function changeReduxLanguage() {
     return {
       type: "CHANGE_LANGUAGE"
@@ -56,12 +58,12 @@ function BotsComponent() {
     return (
         <div>
             <NavBar link="../"/><br/><br/><br/>
-            <Link href="./bots/telegram-bot"> 
+            <NextLink href="./bots/telegram-bot"> 
                 {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к телеграм боту</a> : <a>Go to telegram bot</a>}
-            </Link><br/>
-            <Link href="./bots/discord-bot"> 
+            </NextLink><br/>
+            <NextLink href="./bots/discord-bot"> 
                 {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к дискорд боту</a> : <a>Go to discord bot</a>}
-            </Link><br/>
+            </NextLink><br/>
             <Footer/>
         </div>
     )
