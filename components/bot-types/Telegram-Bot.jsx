@@ -55,7 +55,7 @@ function TelegramBotComponent() {
 
     return (
         <div> 
-          <NavBar link="../"/>
+          <NavBar link="./"/>
             {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Телеграм Бот</h1> : <h1>Telegram Bot</h1>}
           <Footer/>  
         </div>
