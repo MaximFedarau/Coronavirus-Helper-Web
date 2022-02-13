@@ -5,7 +5,7 @@ import ThemeToggleButton from "./theme-toggle-button";
 import store from "../store/store"
 import { Provider } from 'react-redux'
 import { connect } from "react-redux"
-import { Button, Divider, Spacer } from "@chakra-ui/react";
+import { Button, Divider, Spacer, useColorMode } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 
 import NextLink from 'next/link'
@@ -91,7 +91,7 @@ function NotReadyNavBar(props) {
         </Flex>
       </Container>
     </Box>*/
-    <Flex bg={useColorModeValue('#f3ede6', '#20202380')} zIndex={1} as="nav" > {/*useColorModeValue('#ffffff40', '#20202380')*/}
+    <Flex bg={useColorModeValue('#f3ede6', '#20202380')} zIndex={1} as="nav" w="100%" css={{backdropFilter: "blur(10px)"}} position="fixed"> {/*useColorModeValue('#ffffff40', '#20202380')*/}
   <Box p='2' display="flex">
     <Heading size='md' align="center" display="flex" columnGap={'5px'}>
         {(props.link !== "nothing") ? 

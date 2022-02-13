@@ -1,8 +1,10 @@
-import { ChakraProvider, ColorModeProvider, theme } from '@chakra-ui/react'
+import { ChakraProvider, ColorModeProvider } from '@chakra-ui/react'
 
 import { Provider } from "react-redux"
 import store from "../store/store"
 import { ThemeProvider } from '@emotion/react'
+
+import theme from '../lib/theme'
 
 
 function MyApp({ Component, pageProps }) {

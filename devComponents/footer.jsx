@@ -8,7 +8,7 @@ import { IoLogoVk } from "react-icons/io5";
 export default function Footer() {
     return (
         <Center>
-            <Box align="center" opacity={0.4} fontSize="sm" position={"fixed"} bottom="0" textAlign={"center"}>
+            <Box align="center" opacity={0.4} fontSize="sm"  bottom="0" textAlign={"center"}>
             <Divider/>
                 &copy; {new Date().getFullYear()} Maxim Fedarau. All Rights Reserved.<br/>
                 <a href="https://github.com/MaximFedarau" target="_blank">

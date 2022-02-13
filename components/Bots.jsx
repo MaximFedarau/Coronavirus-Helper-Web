@@ -55,7 +55,7 @@ function BotsComponent() {
 
     return (
         <div>
-            <NavBar link="../"/>
+            <NavBar link="../"/><br/><br/><br/>
             <Link href="./bots/telegram-bot"> 
                 {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к телеграм боту</a> : <a>Go to telegram bot</a>}
             </Link><br/>
