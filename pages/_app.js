@@ -11,9 +11,9 @@ import Chakra from "../devComponents/chakra"
 
 function MyApp({ Component, pageProps }) {
   return <Provider store={store}>
-    <Chakra cookies={pageProps.cookies}>
+    <ChakraProvider>
       <Component {...pageProps} />
-  </Chakra>
+  </ChakraProvider>
   </Provider>
 }
 
