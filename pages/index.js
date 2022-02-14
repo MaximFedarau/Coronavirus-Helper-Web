@@ -89,9 +89,9 @@ function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar link="nothing"/>
-      <br/><br/>
+      <br/><br/><br/>
       <Center>
-      <Avatar name="Coronavirus-Helper Logo" src="/images/c-h-logo.jpeg" size="2.100xl"/>
+      <Avatar name="Coronavirus-Helper Logo" src="/images/c-h-logo.jpeg" size="2xl"/>
       </Center><br/><br/>
       <Center>
         <Tag colorScheme={"red"} fontSize="17px" size="lg">

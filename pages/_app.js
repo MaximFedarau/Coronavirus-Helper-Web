@@ -6,10 +6,13 @@ import { ThemeProvider } from '@emotion/react'
 
 import theme from '../lib/theme'
 
+import Fonts from "../devComponents/fonts"
+
 
 function MyApp({ Component, pageProps }) {
   return <Provider store={store}>
     <ChakraProvider theme={theme}>
+      <Fonts/>
       <Component {...pageProps} />
   </ChakraProvider>
   </Provider>
