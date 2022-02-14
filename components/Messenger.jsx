@@ -4,9 +4,10 @@ import store from "../store/store"
 import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
-import { Button, Link } from '@chakra-ui/react'
+import { Button, Center, Link } from '@chakra-ui/react'
 import NavBar from "../devComponents/navbar";
 import Footer from "../devComponents/footer";
+import  Head  from "next/head";
 
 function changeReduxLanguage() {
     return {
@@ -55,8 +56,15 @@ function MessengerComponent() {
 
     return (
         <div>
-          <NavBar link="../"/>
-            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Про messenger</h1> : <h1>About messenger</h1> }
+          <Head>
+        <title>Coronavirus-Helper Messenger</title>
+        <meta name="description" content="Coronavirus-Helper Messenger" />
+        <link rel="icon" href="/favicon.ico" />
+        </Head>
+          <NavBar link="../"/><br/><br/><br/>
+          <Center>
+          {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Про messenger</h1> : <h1>About messenger</h1> }
+          </Center>
           <Footer/>
         </div>
     )
