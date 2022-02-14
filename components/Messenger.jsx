@@ -4,10 +4,16 @@ import store from "../store/store"
 import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
-import { Button, Center, Link } from '@chakra-ui/react'
+import { Avatar, Button, Center, Heading, Icon, Link, List, ListIcon, ListItem } from '@chakra-ui/react'
 import NavBar from "../devComponents/navbar";
 import Footer from "../devComponents/footer";
 import  Head  from "next/head";
+
+import NextLink from "next/link"
+
+import {CheckCircleIcon} from "@chakra-ui/icons"
+
+import {IoDownload} from "react-icons/io5"
 
 function changeReduxLanguage() {
     return {
@@ -63,8 +69,35 @@ function MessengerComponent() {
         </Head>
           <NavBar link="../"/><br/><br/><br/>
           <Center>
-          {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Про messenger</h1> : <h1>About messenger</h1> }
-          </Center>
+            <Avatar src="/images/c-h-messenger-icon.png" size="2xl"/>
+          </Center><br/><br/>
+          <Center>
+            <Heading as="h3" textDecoration="underline" textDecorationColor={"grey"}>
+            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>У нас есть следующие функции:</h1> : <h1>We have following features:</h1> }
+            </Heading>
+          </Center><br/>
+          <Center>
+          <List spacing={3}>
+  <ListItem>
+    <ListIcon as={CheckCircleIcon} color='green.500' />
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+  </ListItem>
+  <ListItem>
+    <ListIcon as={CheckCircleIcon} color='green.500' />
+    Assumenda, quia temporibus eveniet a libero incidunt suscipit
+  </ListItem>
+  <ListItem>
+    <ListIcon as={CheckCircleIcon} color='green.500' />
+    Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+  </ListItem>
+  {/* You can also use custom icons from react-icons */}
+</List>
+          </Center><br/><br/>
+          <Center>
+            <NextLink href="https://github.com/MaximFedarau/Coronavirus-Helper/blob/main/app-debug.apk">
+              <Button leftIcon={<IoDownload/>} colorScheme="blue">Download</Button>
+            </NextLink>
+          </Center><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
           <Footer/>
         </div>
     )
