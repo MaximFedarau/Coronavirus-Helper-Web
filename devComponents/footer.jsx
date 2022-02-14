@@ -5,10 +5,10 @@ import {IoLogoGithub} from "react-icons/io5"
 import { IoMailOutline } from "react-icons/io5";
 import { IoLogoVk } from "react-icons/io5";
 
-export default function Footer() {
+export default function Footer(props) {
     return (
         <Center>
-            <Box align="center" opacity={0.4} fontSize="sm"  bottom="0" textAlign={"center"} position="relative">
+            <Box align="center" opacity={0.4} fontSize="sm"  bottom="0" textAlign={"center"} width="100%" position={props.position} clear="both">
             <Divider/>
                 &copy; {new Date().getFullYear()} Maxim Fedarau. All Rights Reserved.<br/>
                 <a href="https://github.com/MaximFedarau" target="_blank">

@@ -61,7 +61,7 @@ function MessengerComponent() {
       }, [store.getState().RuEnLanguageReducer.language])*/
 
     return (
-        <div>
+        <div style={{height: "100vh", position: "relative"}}>
           <Head>
         <title>Coronavirus-Helper Messenger</title>
         <meta name="description" content="Coronavirus-Helper Messenger" />
@@ -97,8 +97,8 @@ function MessengerComponent() {
             <NextLink href="https://github.com/MaximFedarau/Coronavirus-Helper/blob/main/app-debug.apk">
               <Button leftIcon={<IoDownload/>} colorScheme="blue">Download</Button>
             </NextLink>
-          </Center><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-          <Footer/>
+          </Center>
+          <Footer position="absolute"/>
         </div>
     )
 }
