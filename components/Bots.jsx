@@ -1,4 +1,4 @@
-import { Link } from "@chakra-ui/react"
+import { Button, Center, Flex, Link, useColorModeValue } from "@chakra-ui/react"
 import React from "react"
 
 import store from "../store/store"
@@ -9,6 +9,7 @@ import NavBar from "../devComponents/navbar"
 import Footer from "../devComponents/footer"
 
 import NextLink from "next/link"
+import Head from "next/head"
 
 function changeReduxLanguage() {
     return {
@@ -56,15 +57,36 @@ function BotsComponent() {
     }, [store.getState().RuEnLanguageReducer.language])*/
 
     return (
-        <div>
+        <div style={{minHeight: "100vh", position: "relative"}}>
+            <div style={{paddingBottom: "2.5rem"}}>
+                <Head>
+                <title>Coronavirus-Helper Bots</title>
+                <meta name="description" content="Coronavirus-Helper Bots Lobby" />
+                <link rel="icon" href="/favicon.ico" />
+                </Head>
             <NavBar link="../"/><br/><br/><br/>
+            <Center>
+            <Flex border="solid" borderRadius="0.5rem" borderColor={useColorModeValue("gray.500","gray.200")} borderWidth="2px">
+                Hi!
+            </Flex>
+            </Center>
+            <Center>
+            <Flex>
+                Hello!
+            </Flex>
+            </Center>
+            <Center>
             <NextLink href="./bots/telegram-bot"> 
-                {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к телеграм боту</a> : <a>Go to telegram bot</a>}
-            </NextLink><br/>
-            <NextLink href="./bots/discord-bot"> 
-                {(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к дискорд боту</a> : <a>Go to discord bot</a>}
-            </NextLink><br/>
-            <Footer/>
+                <Button colorScheme="telegram">{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Telegram Боту</a> : <a>Go to Telegram Bot</a>}</Button>
+            </NextLink>
+            </Center><br/>
+            <Center>
+                <NextLink href="./bots/discord-bot">
+                    <Button colorScheme="facebook">{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Discord Боту</a> : <a>Go to Discord Bot</a>}</Button>            
+                </NextLink>
+            </Center><br/>
+            </div>
+            <Footer position="absolute"/>
         </div>
     )
 }
