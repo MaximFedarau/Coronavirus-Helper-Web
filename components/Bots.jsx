@@ -10,6 +10,7 @@ import Footer from "../devComponents/footer"
 
 import NextLink from "next/link"
 import Head from "next/head"
+import { ChevronRightIcon } from "@chakra-ui/icons"
 
 function changeReduxLanguage() {
     return {
@@ -77,12 +78,12 @@ function BotsComponent() {
             </Center>
             <Center>
             <NextLink href="./bots/telegram-bot"> 
-                <Button colorScheme="telegram">{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Telegram Боту</a> : <a>Go to Telegram Bot</a>}</Button>
+                <Button colorScheme="telegram" rightIcon={<ChevronRightIcon/>}>{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Telegram Боту</a> : <a>Go to Telegram Bot</a>}</Button>
             </NextLink>
             </Center><br/>
             <Center>
                 <NextLink href="./bots/discord-bot">
-                    <Button colorScheme="facebook">{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Discord Боту</a> : <a>Go to Discord Bot</a>}</Button>            
+                    <Button colorScheme="facebook" rightIcon={<ChevronRightIcon/>}>{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Discord Боту</a> : <a>Go to Discord Bot</a>}</Button>            
                 </NextLink>
             </Center><br/>
             </div>
