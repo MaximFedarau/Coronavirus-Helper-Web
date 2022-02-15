@@ -143,8 +143,7 @@ function Home() {
       {((store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к странице с мессенджером</a> : <a>Go to messenger page</a>)}
         </Button>
       </NextLink>
-      </Center>
-      <br/>
+      </Center><br/>
       <Footer/>
       <style jxs>
         {`
