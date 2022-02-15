@@ -61,12 +61,13 @@ function MessengerComponent() {
       }, [store.getState().RuEnLanguageReducer.language])*/
 
     return (
-        <div style={{height: "100vh", position: "relative"}}>
+        <div style={{minHeight: "100vh", position: "relative"}}>
           <Head>
         <title>Coronavirus-Helper Messenger</title>
         <meta name="description" content="Coronavirus-Helper Messenger" />
         <link rel="icon" href="/favicon.ico" />
         </Head>
+          <div style={{paddingBottom: "2.5rem"}}>
           <NavBar link="../"/><br/><br/><br/>
           <Center>
             <Avatar src="/images/c-h-messenger-icon.png" size="2xl"/>
@@ -102,9 +103,10 @@ function MessengerComponent() {
               <Button leftIcon={<IoDownload/>} colorScheme="blue">{(store.getState().RuEnLanguageReducer.language === "ru") ? "Скачать" : "Download"}</Button>
             </NextLink>
           </Center>
+          </div><br/>
           <Footer position="absolute"/>
         </div>
-    )
+    )//absolute
 }
 
 const ConnectedMessengerComponent = connect(mapStateToProps,mapDispatchToProps)(MessengerComponent)
