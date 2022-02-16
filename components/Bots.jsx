@@ -1,4 +1,4 @@
-import { Button, Center, Flex, Link, useColorModeValue } from "@chakra-ui/react"
+import { Button, Center, ListItem, Flex, Heading, ListIcon, List, Text, useColorModeValue, Divider, Spacer } from "@chakra-ui/react"
 import React from "react"
 
 import store from "../store/store"
@@ -11,6 +11,8 @@ import Footer from "../devComponents/footer"
 import NextLink from "next/link"
 import Head from "next/head"
 import { ChevronRightIcon } from "@chakra-ui/icons"
+
+import {BellIcon, CheckCircleIcon} from "@chakra-ui/icons"
 
 function changeReduxLanguage() {
     return {
@@ -67,25 +69,45 @@ function BotsComponent() {
                 </Head>
             <NavBar link="../"/><br/><br/><br/>
             <Center>
-            <Flex border="solid" borderRadius="0.5rem" borderColor={useColorModeValue("gray.500","gray.200")} borderWidth="2px">
-                Hi!
-            </Flex>
-            </Center>
+                <Heading as="h3" textDecoration="underline" textDecorationColor={"grey"}>{(store.getState().RuEnLanguageReducer.language === "ru") ? "Наши боты оптимизированы под разные платформы" : "Our Bots are optimised for various platfotms"}</Heading>
+            </Center><br/>
             <Center>
-            <Flex>
-                Hello!
+            <Flex border="solid" borderRadius="0.5rem" borderColor={useColorModeValue("gray.500","gray.200")} borderWidth="2px">
+                <Center>
+                <Text as="h1" fontSize="20px">
+                    {(store.getState().RuEnLanguageReducer.language === "ru") ? "Наш Telegram Бот имеет много возможностей:" : "Our Telegram Bot has large oportunities:"}
+                </Text>
+                <Divider orientation="vertical" width="3px" bg={useColorModeValue("gray.500","gray.200")}></Divider>&nbsp;
+                </Center><br/>
+                <Center>
+                <List spacing={3}>
+  <ListItem>
+    <ListIcon as={CheckCircleIcon} color='green.500' />
+    {(store.getState().RuEnLanguageReducer.language === "ru") ? "Бот автоматически подстраивается под Ваш язык и Вам не нужно беспокоиться об его настройках." : "The Bot automatically adjusts to your language and you do not need to worry about its settings."}
+  </ListItem>
+  <ListItem>
+    <ListIcon as={CheckCircleIcon} color='green.500' />
+    {(store.getState().RuEnLanguageReducer.language === "ru") ? "У Вас всегда будет возможность связаться с разработчиками по любому вопросу." : "You will always have the opportunity to contact the developers for any issue."}
+  </ListItem></List>
+                </Center>
             </Flex>
-            </Center>
+            </Center><br/>
             <Center>
             <NextLink href="./bots/telegram-bot"> 
                 <Button colorScheme="telegram" rightIcon={<ChevronRightIcon/>}>{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Telegram Боту</a> : <a>Go to Telegram Bot</a>}</Button>
             </NextLink>
             </Center><br/>
             <Center>
+            <Flex border="solid" borderRadius="0.5rem" borderColor={useColorModeValue("gray.500","gray.200")} borderWidth="2px">
+                Discord Bot Article
+            </Flex>
+            </Center><br/>
+            <Center>
                 <NextLink href="./bots/discord-bot">
                     <Button colorScheme="facebook" rightIcon={<ChevronRightIcon/>}>{(store.getState().RuEnLanguageReducer.language === "ru") ? <a>Перейти к Discord Боту</a> : <a>Go to Discord Bot</a>}</Button>            
                 </NextLink>
-            </Center><br/>
+            </Center>
+            <br/>
             </div>
             <Footer position="absolute"/>
         </div>
