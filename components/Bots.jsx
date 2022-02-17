@@ -68,7 +68,7 @@ function BotsComponent() {
                 <Head>
                 <title>Coronavirus-Helper Bots</title>
                 <meta name="description" content="Coronavirus-Helper Bots Lobby" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href='/images/c-h-logo-round.png' />
                 </Head>
             <NavBar link="../"/><br/><br/><br/>
             <Center>

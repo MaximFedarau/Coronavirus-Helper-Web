@@ -7,6 +7,7 @@ import {connect} from "react-redux"
 import { Button, Link } from '@chakra-ui/react'
 import NavBar from "../../devComponents/navbar";
 import Footer from "../../devComponents/footer";
+import Head from "next/head";
 
 function changeReduxLanguage() {
     return {
@@ -54,10 +55,17 @@ function TelegramBotComponent() {
     }, [store.getState().RuEnLanguageReducer.language])*/
 
     return (
-        <div> 
+        <div style={{minHeight: "100vh", position: "relative"}}> 
+          <div style={{paddingBottom: "2.5rem"}}>
+            <Head>
+            <title>Coronavirus-Helper Telegram-Bot</title>
+            <meta name="description" content="Coronavirus-Helper Telegram-Bot" />
+            <link rel="icon" href='/images/c-h-logo-round.png' />
+            </Head>
           <NavBar link="./"/>
-            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Телеграм Бот</h1> : <h1>Telegram Bot</h1>}
-          <Footer/>  
+            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Телеграм Бот</h1> : <h1>Telegram Bot</h1>} 
+          </div> 
+          <Footer position="absolute"/>  
         </div>
     )
 }

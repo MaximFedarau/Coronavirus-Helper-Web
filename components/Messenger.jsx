@@ -65,7 +65,7 @@ function MessengerComponent() {
           <Head>
         <title>Coronavirus-Helper Messenger</title>
         <meta name="description" content="Coronavirus-Helper Messenger" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href='/images/c-h-logo-round.png' />
         </Head>
           <div style={{paddingBottom: "2.5rem"}}>
           <NavBar link="../"/><br/><br/><br/>

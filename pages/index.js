@@ -86,7 +86,7 @@ function Home() {
       <Head>
         <title>Coronavirus-Helper</title>
         <meta name="description" content="Coronavirus-Helper" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href='/images/c-h-logo-round.png' />
       </Head>
       <NavBar link="nothing"/>
       <br/><br/><br/>
