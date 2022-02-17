@@ -1,4 +1,4 @@
-import { Button, Center, ListItem, Flex, Heading, ListIcon, List, Text, useColorModeValue, Divider, Spacer } from "@chakra-ui/react"
+import { Button, Center, ListItem, Flex, Heading, ListIcon, List, Text, useColorModeValue, Divider, Spacer, Icon } from "@chakra-ui/react"
 import React from "react"
 
 import store from "../store/store"
@@ -13,6 +13,9 @@ import Head from "next/head"
 import { ChevronRightIcon } from "@chakra-ui/icons"
 
 import {BellIcon, CheckCircleIcon} from "@chakra-ui/icons"
+
+import {IoLogoDiscord} from "react-icons/io5"
+import {BsTelegram} from "react-icons/bs"
 
 function changeReduxLanguage() {
     return {
@@ -75,8 +78,8 @@ function BotsComponent() {
             <Flex border="solid" borderRadius="0.5rem" borderColor={useColorModeValue("gray.500","gray.200")} borderWidth="2px">
                 <Center>
                 <Text as="h1" fontSize="20px">
-                    {(store.getState().RuEnLanguageReducer.language === "ru") ? "Наш Telegram Бот имеет много возможностей:" : "Our Telegram Bot has large oportunities:"}
-                </Text>
+                    &nbsp;<Icon as={BsTelegram}/>&nbsp;{(store.getState().RuEnLanguageReducer.language === "ru") ? "Наш Telegram Бот имеет много возможностей:" : "Our Telegram Bot has large oportunities:"}
+                </Text>&nbsp;
                 <Divider orientation="vertical" width="3px" bg={useColorModeValue("gray.500","gray.200")}></Divider>&nbsp;
                 </Center><br/>
                 <Center>
@@ -99,7 +102,23 @@ function BotsComponent() {
             </Center><br/>
             <Center>
             <Flex border="solid" borderRadius="0.5rem" borderColor={useColorModeValue("gray.500","gray.200")} borderWidth="2px">
-                Discord Bot Article
+            <Center>
+                <Text as="h1" fontSize="20px">
+                &nbsp;<Icon as={IoLogoDiscord}/>&nbsp;{(store.getState().RuEnLanguageReducer.language === "ru") ? "Наш Discord Бот имеет много возможностей:" : "Our Discord Bot has large oportunities:"}
+                </Text>&nbsp;
+                <Divider orientation="vertical" width="3px" bg={useColorModeValue("gray.500","gray.200")}></Divider>&nbsp;
+                </Center><br/>
+                <Center>
+                <List spacing={3}>
+  <ListItem>
+    <ListIcon as={CheckCircleIcon} color='green.500' />
+    {(store.getState().RuEnLanguageReducer.language === "ru") ? "Вы попадаете на наш сервер с дружелюбными участниками и модерацией." : "You are entering our server with friendly members and moderators."}{/*Вы попадаете на наш сервер с дружелюбными участниками и модерацией.  You are entering our server with friendly members and moderators.*/}
+  </ListItem>
+  <ListItem>
+    <ListIcon as={CheckCircleIcon} color='green.500' />
+    {(store.getState().RuEnLanguageReducer.language === "ru") ? "Бот обладет всеми теми же возможностями, что и Telegram Бот, только в Discord!" : "The bot will have all the same features as the Telegram Bot, only in Discord!"}
+  </ListItem></List>
+                </Center>
             </Flex>
             </Center><br/>
             <Center>
