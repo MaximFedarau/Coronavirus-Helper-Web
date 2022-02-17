@@ -65,7 +65,7 @@ function TelegramBotComponent() {
             </Head>
           <NavBar link="./"/><br/><br/><br/>
             <Center>
-            <a target="_blank" href="https://t.me/coronavirus_project_bot">
+            <a target="_blank" href="https://t.me/coronavirus_project_bot" rel="noreferrer">
             <Icon as={BsTelegram} color="blue.200" boxSize="10em"/>
             </a>
             </Center><br/><br/><br/>
