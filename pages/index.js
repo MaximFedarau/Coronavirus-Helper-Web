@@ -119,7 +119,7 @@ function Home() {
       <Center>
         <Tag fontSize="23px" variant="solid" bg={useColorModeValue("blue.500","purple.500")} size="lg">
         <p style={{width:"400px"}}>
-        {((store.getState().RuEnLanguageReducer.language === "ru") ?  <p>С нашей системой ботов вы можете найти ближайший пункт вакцинации, где вы можете сделать вакцину или пройти тест на коронавирус, статистику в реальном времени и многое другое!</p> : <p>With our Bots system you can find closest vaccinationn point, whre you can make a vaccine or be tested for coronavirus, real-time statistics and even more!</p>)}
+        {((store.getState().RuEnLanguageReducer.language === "ru") ?  <p>С нашей системой ботов вы можете найти ближайший пункт вакцинации, где вы можете сделать вакцину или пройти тест на коронавирус, статистику в реальном времени и многое другое!</p> : <p>With our Bots system you can find closest vaccinationn point, where you can make a vaccine or be tested for coronavirus, real-time statistics and even more!</p>)}
         </p>
         </Tag>
       </Center><br/>

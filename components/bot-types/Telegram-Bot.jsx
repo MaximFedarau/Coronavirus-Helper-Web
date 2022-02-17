@@ -4,10 +4,11 @@ import store from "../../store/store"
 import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
-import { Button, Link } from '@chakra-ui/react'
+import { Avatar, Badge, Button, Center, Icon, Link, Text } from '@chakra-ui/react'
 import NavBar from "../../devComponents/navbar";
 import Footer from "../../devComponents/footer";
 import Head from "next/head";
+import { BsTelegram } from "react-icons/bs";
 
 function changeReduxLanguage() {
     return {
@@ -62,8 +63,26 @@ function TelegramBotComponent() {
             <meta name="description" content="Coronavirus-Helper Telegram-Bot" />
             <link rel="icon" href='/images/c-h-logo-round.png' />
             </Head>
-          <NavBar link="./"/>
-            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Телеграм Бот</h1> : <h1>Telegram Bot</h1>} 
+          <NavBar link="./"/><br/><br/><br/>
+            <Center>
+            <a target="_blank" href="https://t.me/coronavirus_project_bot">
+            <Icon as={BsTelegram} color="blue.200" boxSize="10em"/>
+            </a>
+            </Center><br/><br/><br/>
+            <Center>
+              <Badge colorScheme="purple">{(store.getState().RuEnLanguageReducer.language === "ru") ? "Ноябрьское обновление" : "November Update"}</Badge>&nbsp;
+              <Text>
+                {(store.getState().RuEnLanguageReducer.language === "ru") ? "Мы добавили пару новых функций и улучшили старые." : "We add some more features and upgrade the old ones."}
+              </Text>
+            </Center><br/>
+            <Center>
+              <ul style={{listStyleType:"none"}}>
+                <li>{(store.getState().RuEnLanguageReducer.language === "ru") ? "1) Язык бота автоматически подстраивается под язык пользователя на данном устройстве и на данном аккаунте." : "1) The language of the bot automatically adjusts to the language of the user on this device and on this account."}</li>
+                <li>{(store.getState().RuEnLanguageReducer.language === "ru") ? "2) Мы добавили функцию /geo, с помощью которой по геопозиции пользователя определяется ближайший пункт сдачи теста на коронавариус и пункт вакцинации." : "2) We have added the /geo function, which determines the nearest coronavarius test point and vaccination point based on the user's geolocation."}</li>
+                <li>{(store.getState().RuEnLanguageReducer.language === "ru") ? "3) Количество стран в функции /stat было увеличнено до 120. " : "3) The number of countries in the /stat function has been increased to 120."}</li>
+                <li>{(store.getState().RuEnLanguageReducer.language === "ru") ? "4) Общая производительность бота улучшена." : "4) The overall performance of the bot has been improved."}</li>
+              </ul>
+            </Center>
           </div> 
           <Footer position="absolute"/>  
         </div>
