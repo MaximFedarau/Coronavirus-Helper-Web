@@ -67,7 +67,7 @@ function DiscordBotComponent() {
             </Head>
           <NavBar link="./"/><br/><br/><br/>
           <Center>
-            <a target="_blank" href="https://discord.gg/Ytv2MWvc" rel="noreferrer">
+            <a target="_blank" href="https://discord.gg/fgHzz7t4DH" rel="noreferrer">
             <Icon as={FaDiscord} boxSize="10em" style={{color: "rgb(88,101,242)"}}/>
             </a>
           </Center><br/><br/><br/>
