@@ -4,11 +4,13 @@ import store from "../../store/store"
 import {Provider} from "react-redux"
 import {connect} from "react-redux" 
 
-import { Button, Link } from '@chakra-ui/react'
+import { Badge, Button, Center, Icon, Link , Text} from '@chakra-ui/react'
 import ThemeToggleButton from "../../devComponents/theme-toggle-button";
 import NavBar from "../../devComponents/navbar";
 import Footer from "../../devComponents/footer";
 import Head from "next/head";
+
+import {FaDiscord} from "react-icons/fa"
 
 function changeReduxLanguage() {
     return {
@@ -63,8 +65,18 @@ function DiscordBotComponent() {
               <meta name="description" content="Coronavirus-Helper Discord-Bot" />
               <link rel="icon" href='/images/c-h-logo-round.png' />
             </Head>
-          <NavBar link="./"/>
-            {(store.getState().RuEnLanguageReducer.language === "ru") ? <h1>Дискорд бот</h1> : <h1>Discord Bot</h1>}    
+          <NavBar link="./"/><br/><br/><br/>
+          <Center>
+            <a target="_blank" href="https://discord.gg/Ytv2MWvc" rel="noreferrer">
+            <Icon as={FaDiscord} boxSize="10em" style={{color: "rgb(88,101,242)"}}/>
+            </a>
+          </Center><br/><br/><br/>
+          <Center>
+          <Badge colorScheme="purple">{(store.getState().RuEnLanguageReducer.language === "ru") ? "Ноябрьское обновление" : "November Update"}</Badge>&nbsp;
+              <Text>
+                {(store.getState().RuEnLanguageReducer.language === "ru") ? "Количество стран в функции !stat было изменено на 63." : "The number of countries in the !stat function has been changed to 63."}
+              </Text>
+            </Center><br/>
           </div> 
           <Footer position="absolute"/>
         </div>
