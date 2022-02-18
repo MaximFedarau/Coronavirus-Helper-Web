@@ -83,6 +83,7 @@ function TelegramBotComponent() {
                 <li>{(store.getState().RuEnLanguageReducer.language === "ru") ? "4) Общая производительность бота улучшена." : "4) The overall performance of the bot has been improved."}</li>
               </ul>
             </Center>
+            <br/>
           </div> 
           <Footer position="absolute"/>  
         </div>
